@@ -15,7 +15,7 @@ module.exports = {
     },
 
     head: [
-        ['link', { rel: 'icon', href: '/hipi.svg' }]
+        ['link', { rel: 'icon', href: '/h.svg' }]
     ],
 
     // 使用的主题
