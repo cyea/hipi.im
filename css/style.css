@@ -37,7 +37,7 @@ header {
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
-  font-size: calc(12px + 1vw);
+  font-size: 20px;
   box-sizing: border-box;
   align-items: center;
   z-index: 99;
@@ -53,8 +53,8 @@ header .social a {
 }
 header .social .iconfont {
   margin: 0 10px;
-  font-size: 14px;
   vertical-align: middle;
+  font-size: 18px;
 }
 header #he-plugin-simple {
   display: inline-table;
@@ -71,9 +71,7 @@ footer a {
   color: #fff;
   text-decoration: none;
 }
-footer .links {
-  /* font-family: "FZXiJinLJW"; */
-}
+
 
 footer .copy {
   font-size: 12px;
