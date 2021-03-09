@@ -1,110 +1,81 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8" />
-  <title>HIPI</title>
-
-  <meta name="viewport"
-    content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, viewport-fit=cover" />
-  <meta name="renderer" content="webkit" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta name="description" content="HIPI" />
-  <meta name="keywords" content="HIPI" />
-
-  <meta name="apple-mobile-web-app-title" content="HIPI" />
-  <meta name="application-name" content="HIPI" />
-
-  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" sizes="114x114" href="./images/logo_114x114.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./images/logo_180x180.png" />
-  <link rel="image_src" sizes="600x600" href="./images/logo_600x600.png" />
-
-  <link rel="stylesheet" href="./css/style.css?v=1.8" />
-  <link rel="stylesheet" href="./font/iconfont.css" />
-  <!--
-  <script>var HM_ID="4baa41a4dcb17e375971bc19ca692c93";var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?"+HM_ID;var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s)})();</script>
-  -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-  <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js"></script>
-  <script>
-    $(function () {
-      /* 今日诗词 */
-      jinrishici.load(function (result) {
-        if (result.status === "success") {
-          const data = result.data;
-          const shiciStr =
-            data.content &&
-            data.content.replace("。", "").split("，").join("<br>");
-          $(".verses-content").html(shiciStr);
-          $(".verses-origin .title").html(`「${data.origin.title}」`);
-          $(".verses-origin .author").html(data.origin.author);
-        }
-      });
-
-      function debounce(fn, wait) {
-        var timeout = null;
-        return function () {
-          if (timeout !== null) clearTimeout(timeout);
-          timeout = setTimeout(fn, wait);
-        };
-      }
-    });
-  </script>
-</head>
-
-<body>
-  <canvas id="canvas" class="bg"></canvas>
-  <header>
-    <div class="logo">HIPI</div>
-    <div class="social">
-      <a target="_blank" href="https://github.com/hipi" title="GitHub">
-        <span class="iconfont icon-github"></span>
-      </a>
-      <a target="_blank" href="mailto:yuyehack@gmail.com" title="Mail">
-        <span class="iconfont icon-email"></span>
-      </a>
-    </div>
-  </header>
-  <div id="root">
-    <div class="verses">
-      <div class="verses-content">滚滚长江东逝水，浪花淘尽英雄。</div>
-      <div class="verses-origin">
-        <span class="title">「念奴娇·赤壁怀古」</span>
-        <span class="author">苏轼</span>
+﻿<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <title>I AM I</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+  </head>
+  <body>
+    <div class="content-container">
+      <img
+        class="avatar"
+        src="https://www.gravatar.com/avatar/40206d98ff6e85da457c341e4a4ea437?s=400"
+      />
+      <div class="text part1">
+        <div>
+          <span class="letter"
+            ><div class="character">H</div>
+            <span></span
+          ></span>
+          <span class="letter"
+            ><div class="character"></div>
+            <span></span
+          ></span>
+          <span class="letter"
+            ><div class="character">I</div>
+            <span></span
+          ></span>
+          <span class="letter"
+            ><div class="character">P</div>
+            <span></span
+          ></span>
+          <span class="letter"
+            ><div class="character"></div>
+            <span></span
+          ></span>
+          <span class="letter"
+            ><div class="character">I</div>
+            <span></span
+          ></span>
+        </div>
       </div>
+      <span class="bio">
+        <span style="transition-delay: 2s" class="emphasis">这里是</span>
+        <span style="transition-delay: 0.5s">H</span>
+        <span style="transition-delay: 1s">I</span>
+        <span style="transition-delay: 1.5s">P</span>
+        <span style="transition-delay: 2s">I</span>
+        <span style="transition-delay: 2.5s">.</span>
+      </span>
+      <ul class="url-wrap">
+        <li>
+          <a href="https://www.yuye.fun" target="_blank">
+            <img
+              width="50px"
+              src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIC0yMCA1MTIgNTExIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPjxwYXRoIGQ9Im0xMCAzMi4yNjk1MzF2NDA4LjM5ODQzOGMwIDEyLjAyMzQzNyA5Ljc0NjA5NCAyMS43Njk1MzEgMjEuNzY5NTMxIDIxLjc2OTUzMWg0NDguNDYwOTM4YzEyLjAyMzQzNyAwIDIxLjc2OTUzMS05Ljc0NjA5NCAyMS43Njk1MzEtMjEuNzY5NTMxdi00MDguMzk4NDM4YzAtMTIuMDIzNDM3LTkuNzQ2MDk0LTIxLjc2OTUzMS0yMS43Njk1MzEtMjEuNzY5NTMxaC00NDguNDYwOTM4Yy0xMi4wMjM0MzcgMC0yMS43Njk1MzEgOS43NDYwOTQtMjEuNzY5NTMxIDIxLjc2OTUzMXptMCAwIiBmaWxsPSIjZmZmIi8+PHBhdGggZD0ibTMxLjc2OTUzMSAxMC41aDQ0OC40NjA5MzhjMTIuMDIzNDM3IDAgMjEuNzY5NTMxIDkuNzQ2MDk0IDIxLjc2OTUzMSAyMS43Njk1MzF2NzQuMDE5NTMxaC00OTJ2LTc0LjAxOTUzMWMwLTEyLjAyMzQzNyA5Ljc0NjA5NC0yMS43Njk1MzEgMjEuNzY5NTMxLTIxLjc2OTUzMXptMCAwIiBmaWxsPSIjNzJkOGZmIi8+PHBhdGggZD0ibTY3LjE3OTY4OCA0OC4zOTQ1MzFoLS4xMDE1NjNjLTUuNTIzNDM3IDAtMTAgNC40NzY1NjMtMTAgMTAgMCA1LjUyMzQzOCA0LjQ3NjU2MyAxMCAxMCAxMGguMTAxNTYzYzUuNTIzNDM3IDAgMTAtNC40NzY1NjIgMTAtMTAgMC01LjUyMzQzNy00LjQ3NjU2My0xMC0xMC0xMHptMCAwIi8+PHBhdGggZD0ibTExNi43MTA5MzggNDguMzk0NTMxaC0uMTAxNTYzYy01LjUyMzQzNyAwLTEwIDQuNDc2NTYzLTEwIDEwIDAgNS41MjM0MzggNC40NzY1NjMgMTAgMTAgMTBoLjEwMTU2M2M1LjUyMzQzNyAwIDEwLTQuNDc2NTYyIDEwLTEwIDAtNS41MjM0MzctNC40NzY1NjMtMTAtMTAtMTB6bTAgMCIvPjxwYXRoIGQ9Im0xNjYuMjQyMTg4IDQ4LjM5NDUzMWgtLjEwMTU2M2MtNS41MjM0MzcgMC0xMCA0LjQ3NjU2My0xMCAxMCAwIDUuNTIzNDM4IDQuNDc2NTYzIDEwIDEwIDEwaC4xMDE1NjNjNS41MjM0MzcgMCAxMC00LjQ3NjU2MiAxMC0xMCAwLTUuNTIzNDM3LTQuNDc2NTYzLTEwLTEwLTEwem0wIDAiLz48cGF0aCBkPSJtNDQ0LjMwODU5NCA0OC4zOTQ1MzFoLTE5Mi45Mjk2ODhjLTUuNTIzNDM3IDAtMTAgNC40NzY1NjMtMTAgMTAgMCA1LjUxOTUzMSA0LjQ3NjU2MyAxMCAxMCAxMGgxOTIuOTI5Njg4YzUuNTIzNDM3IDAgMTAtNC40ODA0NjkgMTAtMTAgMC01LjUyMzQzNy00LjQ3NjU2My0xMC0xMC0xMHptMCAwIi8+PHBhdGggZD0ibTI2Mi44OTA2MjUgNDUyLjQzNzVjLTIuNjI4OTA2IDAtNS4xOTkyMTkgMS4wNzAzMTItNy4wNzAzMTMgMi45Mjk2ODgtMS44NTkzNzQgMS44NTkzNzQtMi45Mjk2ODcgNC40NDE0MDYtMi45Mjk2ODcgNy4wNzAzMTJzMS4wNzAzMTMgNS4yMTA5MzggMi45Mjk2ODcgNy4wNzAzMTJjMS44NzEwOTQgMS44NTkzNzYgNC40NDE0MDcgMi45Mjk2ODggNy4wNzAzMTMgMi45Mjk2ODhzNS4yMTA5MzctMS4wNzAzMTIgNy4wNzAzMTMtMi45Mjk2ODhjMS44NjcxODctMS44NTkzNzQgMi45Mjk2ODctNC40NDE0MDYgMi45Mjk2ODctNy4wNzAzMTJzLTEuMDYyNS01LjIxMDkzOC0yLjkyOTY4Ny03LjA3MDMxMmMtMS44NTkzNzYtMS44NTkzNzYtNC40NDE0MDctMi45Mjk2ODgtNy4wNzAzMTMtMi45Mjk2ODh6bTAgMCIvPjxwYXRoIGQ9Im00ODAuMjMwNDY5LjVoLTQ0OC40NjA5MzhjLTE3LjUxNTYyNSAwLTMxLjc2OTUzMSAxNC4yNTM5MDYtMzEuNzY5NTMxIDMxLjc2OTUzMXY0MDguMzk4NDM4YzAgMTcuNTE5NTMxIDE0LjI1MzkwNiAzMS43Njk1MzEgMzEuNzY5NTMxIDMxLjc2OTUzMWgxODkuMjMwNDY5YzUuNTIzNDM4IDAgMTAtNC40NzY1NjIgMTAtMTBzLTQuNDc2NTYyLTEwLTEwLTEwaC0xODkuMjMwNDY5Yy02LjQ4ODI4MSAwLTExLjc2OTUzMS01LjI3NzM0NC0xMS43Njk1MzEtMTEuNzY5NTMxdi0zMjQuMzc4OTA3aDQ3MnYzMjQuMzc4OTA3YzAgNi40ODgyODEtNS4yODEyNSAxMS43Njk1MzEtMTEuNzY5NTMxIDExLjc2OTUzMWgtMTc2LjU2MjVjLTUuNTIzNDM4IDAtMTAgNC40NzY1NjItMTAgMTBzNC40NzY1NjIgMTAgMTAgMTBoMTc2LjU2MjVjMTcuNTE1NjI1IDAgMzEuNzY5NTMxLTE0LjI1IDMxLjc2OTUzMS0zMS43Njk1MzF2LTQwOC4zOTg0MzhjMC0xNy41MTU2MjUtMTQuMjUzOTA2LTMxLjc2OTUzMS0zMS43Njk1MzEtMzEuNzY5NTMxem0tNDYwLjIzMDQ2OSA5NS43ODUxNTZ2LTY0LjAxNTYyNWMwLTYuNDg4MjgxIDUuMjgxMjUtMTEuNzY5NTMxIDExLjc2OTUzMS0xMS43Njk1MzFoNDQ4LjQ2MDkzOGM2LjQ4ODI4MSAwIDExLjc2OTUzMSA1LjI4MTI1IDExLjc2OTUzMSAxMS43Njk1MzF2NjQuMDE5NTMxaC00NzJ6bTAgMCIvPjxwYXRoIGQ9Im0xNzguMDM5MDYyIDIzMC41YzAtMTkuODUxNTYyLTE2LjE0ODQzNy0zNi0zNi0zNmgtMzMuNjY3OTY4Yy01LjUyMzQzOCAwLTEwIDQuNDc2NTYyLTEwIDEwdjEwNGMwIDUuNTIzNDM4IDQuNDc2NTYyIDEwIDEwIDEwaDMzLjY2Nzk2OGMxOS44NTE1NjMgMCAzNi0xNi4xNDg0MzggMzYtMzYgMC0xMC4yMTQ4NDQtNC4yODEyNS0xOS40NDE0MDYtMTEuMTQwNjI0LTI2IDYuODU5Mzc0LTYuNTU4NTk0IDExLjE0MDYyNC0xNS43ODUxNTYgMTEuMTQwNjI0LTI2em0tMjAgNTJjMCA4LjgyMDMxMi03LjE3OTY4NyAxNi0xNiAxNmgtMjMuNjY3OTY4di0zMmgyMy42Njc5NjhjOC44MjAzMTMgMCAxNiA3LjE3NTc4MSAxNiAxNnptLTM5LjY2Nzk2OC0zNnYtMzJoMjMuNjY3OTY4YzguODI0MjE5IDAgMTYgNy4xNzk2ODggMTYgMTZzLTcuMTc1NzgxIDE2LTE2IDE2em0wIDAiLz48cGF0aCBkPSJtMjA2LjY0ODQzOCAxOTQuNWMtNS41MjM0MzggMC0xMCA0LjQ3NjU2Mi0xMCAxMHY4MC44NzEwOTRjMCAxOC4yNjk1MzEgMTQuODYzMjgxIDMzLjEyODkwNiAzMy4xMjg5MDYgMzMuMTI4OTA2IDUuNTIzNDM3IDAgMTAtNC40NzY1NjIgMTAtMTBzLTQuNDc2NTYzLTEwLTEwLTEwYy03LjIzODI4MiAwLTEzLjEyODkwNi01Ljg5MDYyNS0xMy4xMjg5MDYtMTMuMTI4OTA2di04MC44NzEwOTRjMC01LjUyMzQzOC00LjQ3NjU2My0xMC0xMC0xMHptMCAwIi8+PHBhdGggZD0ibTMyNC44NjcxODggMjgyLjI4OTA2MmMwLTE5Ljk2ODc1LTE2LjI0MjE4OC0zNi4yMTQ4NDMtMzYuMjEwOTM4LTM2LjIxNDg0M3MtMzYuMjEwOTM4IDE2LjI0NjA5My0zNi4yMTA5MzggMzYuMjE0ODQzIDE2LjI0NjA5NCAzNi4yMTA5MzggMzYuMjEwOTM4IDM2LjIxMDkzOGMxOS45Njg3NSAwIDM2LjIxMDkzOC0xNi4yNDIxODggMzYuMjEwOTM4LTM2LjIxMDkzOHptLTUyLjQyMTg3NiAwYzAtOC45NDE0MDYgNy4yNzM0MzgtMTYuMjE0ODQzIDE2LjIxMDkzOC0xNi4yMTQ4NDNzMTYuMjEwOTM4IDcuMjczNDM3IDE2LjIxMDkzOCAxNi4yMTQ4NDNjMCA4LjkzNzUtNy4yNjk1MzIgMTYuMjEwOTM4LTE2LjIxMDkzOCAxNi4yMTA5MzhzLTE2LjIxMDkzOC03LjI3MzQzOC0xNi4yMTA5MzgtMTYuMjEwOTM4em0wIDAiLz48cGF0aCBkPSJtMzc3LjQxNDA2MiAzNDYuNWMtOC45Mzc1IDAtMTYuMjEwOTM3LTcuMjczNDM4LTE2LjIxMDkzNy0xNi4yMTA5MzggMC01LjUyMzQzNy00LjQ3NjU2My0xMC0xMC0xMHMtMTAgNC40NzY1NjMtMTAgMTBjMCAxOS45Njg3NSAxNi4yNDYwOTQgMzYuMjEwOTM4IDM2LjIxMDkzNyAzNi4yMTA5MzggMTkuOTY4NzUgMCAzNi4yMTQ4NDQtMTYuMjQyMTg4IDM2LjIxNDg0NC0zNi4yMTA5Mzh2LTQ4YzAtMTkuOTY4NzUtMTYuMjQ2MDk0LTM2LjIxNDg0My0zNi4yMTQ4NDQtMzYuMjE0ODQzLTE5Ljk2NDg0MyAwLTM2LjIxMDkzNyAxNi4yNDYwOTMtMzYuMjEwOTM3IDM2LjIxNDg0M3MxNi4yNDYwOTQgMzYuMjEwOTM4IDM2LjIxMDkzNyAzNi4yMTA5MzhjNS44MjgxMjYgMCAxMS4zMzIwMzItMS4zOTA2MjUgMTYuMjE0ODQ0LTMuODQ3NjU2djE1LjYzNjcxOGMwIDguOTM3NS03LjI3MzQzNyAxNi4yMTA5MzgtMTYuMjE0ODQ0IDE2LjIxMDkzOHptMC00OGMtOC45Mzc1IDAtMTYuMjEwOTM3LTcuMjczNDM4LTE2LjIxMDkzNy0xNi4yMTA5MzggMC04Ljk0MTQwNiA3LjI3MzQzNy0xNi4yMTQ4NDMgMTYuMjEwOTM3LTE2LjIxNDg0MyA4Ljk0MTQwNyAwIDE2LjIxNDg0NCA3LjI3MzQzNyAxNi4yMTQ4NDQgMTYuMjE0ODQzIDAgOC45Mzc1LTcuMjczNDM3IDE2LjIxMDkzOC0xNi4yMTQ4NDQgMTYuMjEwOTM4em0wIDAiLz48cGF0aCBkPSJtMTA4LjM3MTA5NCA0MTYuNWgyOTUuMjU3ODEyYzUuNTIzNDM4IDAgMTAtNC40NzY1NjIgMTAtMTBzLTQuNDc2NTYyLTEwLTEwLTEwaC0yOTUuMjU3ODEyYy01LjUxOTUzMiAwLTEwIDQuNDc2NTYyLTEwIDEwczQuNDgwNDY4IDEwIDEwIDEwem0wIDAiLz48L3N2Zz4K"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/hipi" target="_blank">
+            <img
+              width="50px"
+              src="data:image/png;base64,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"
+            />
+          </a>
+        </li>
+      </ul>
     </div>
-    <div class="list-container">
-      <a class="list" target="_blank" href="https://www.yuye.fun">羽叶风雨</a>
-
-      <a class="list" target="_blank" href="https://www.dogged.cn"> 顽狗加密 </a>
-
-      <a class="list" target="_blank" href="https://dc4.cn"> 网址缩短 </a>
-
-      <a class="list" target="_blank" href="https://music.elem.fun">
-        元素音乐
-      </a>
+    <div class="footer">
+      <span>
+        &copy; 2021
+        <a href="https://niao.su/t/html/iami/" target="_blank">HIPI</a>
+      </span>
     </div>
-  </div>
-  <footer>
-    <div class="links">
-      <a style="color: #fff" href="https://chenyeah.com">羽叶</a>
-    </div>
-    <div class="copy">
-      <span class="title">HIPI</span>
-      <span>|</span>
-      <span>Copyright © 2020. HIPI All rights reserved.</span>
-    </div>
-  </footer>
-  <script>
-    console.log(
-      "%c\n          ",
-      "font-size:40px;background:url('https://img.shields.io/badge/HIPI-https%3A%2F%2Fhipi.im-2bbc8a') no-repeat 0px 6px"
-    );
-  </script>
-  <script src="https://widget.heweather.net/simple/static/js/he-simple-common.js?v=1.1"></script>
-  <!-- 背景 -->
-  <script src="./js/sky.js"></script>
-</body>
-
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/niko.js"></script>
+  </body>
 </html>
