@@ -19,10 +19,6 @@ $(function () {
     };
   };
 
-  const isTouch = () => {
-    return navigator.maxTouchPoints > 0;
-  };
-
   const onMousemove = () => {
     const pageX = $(document).width();
     const pageY = $(document).height();
@@ -37,23 +33,7 @@ $(function () {
     $(document).on("mousemove touchmove", handleMousemove);
   };
 
-  onTouchmove = () => {
-    const pageX = $(document).width();
-    const pageY = $(document).height();
-    const handleTouchmove = (event) => {
-      const mouseX = event.targetTouches[0].pageX;
-      const mouseY = event.targetTouches[0].pageY;
-      const xAxis = ((mouseX / pageX) * 100 - 50) / 2;
-      const yAxis = (mouseY / pageY) * 100 - 50;
-      $(".ghost-eyes").css("transform", `translate(${xAxis}%,${yAxis}%`);
-    };
-    $(document).off("touchmove", handleTouchmove);
-    $(document).on("touchmove", handleTouchmove);
-  };
   onMousemove();
-  if (isTouch()) {
-    onTouchmove();
-  }
 
   $(window).on("rize", debounce(onMousemove, 500));
 
