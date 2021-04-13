@@ -19,6 +19,9 @@
   font-family: "FZXiJinLJW";
   src: url(https://cdn.jsdelivr.net/gh/hipi/distribute@master/font/FZXiJinLJW.ttf) format("truetype");
 }
+html {
+  overflow: hidden;
+}
 body {
   padding: 0;
   margin: 0;
