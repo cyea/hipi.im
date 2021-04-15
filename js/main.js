@@ -26,7 +26,7 @@ $(function () {
       const mouseX = event.pageX;
       const mouseY = event.pageY;
       const xAxis = ((mouseX / pageX) * 100 - 50) / 2;
-      const yAxis = (mouseY / pageY) * 100 - 50;
+      const yAxis = ((mouseY / pageY) * 100 - 50) * 2;
       $(".ghost-eyes").css("transform", `translate(${xAxis}%,${yAxis}%`);
     };
     $(document).off("mousemove touchmove", handleMousemove);
